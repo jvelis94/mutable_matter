@@ -1,3 +1,3 @@
 class PostPhoto < ApplicationRecord
-  belongs_to :photo
+  belongs_to :post
 end
