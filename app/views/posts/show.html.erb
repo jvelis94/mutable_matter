@@ -1,0 +1,4 @@
+<h2> <%= link_to @post.title, post_path(@post) %></h2> 
+    <small><%= @post.date %> </small>
+    <p> <%= sanitize @post.body %> </p>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>

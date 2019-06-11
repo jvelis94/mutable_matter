@@ -65,3 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pundit'
 gem 'devise'
 gem 'simple_form'
+gem 'tinymce-rails'
