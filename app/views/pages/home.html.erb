@@ -1,1 +1,29 @@
-<h1>Mutable matter</h1>
+<div class=home-page>
+    <div class='nav-container'>
+        <div class='nav-logo'>
+            <h1>Mutable Matter</h1>
+        </div>
+        <div class='nav-options'>
+            <ul class='nav-list'>
+                <li><%= link_to 'Posts', posts_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                <li><%= link_to 'Sign In', new_user_session_path %></li>
+                <% else %>
+                <li><%= link_to 'Sign Out', destroy_user_session_path %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+
+    <div class='about'>
+        <p>Mutable Matter is...</p><br><br><br><br><br>
+    </div>
+    <div class='recent-posts'>
+        <div class'title-section>
+            <h4>Title of post</h4>
+            <small>June 8th, 2019</small>
+        </div>
+        <p>Title</p>
+    </div>
+</div>
