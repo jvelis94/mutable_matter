@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #000000;
+    background-color: #000000;
 }
 
 .home-page {
@@ -18,10 +19,42 @@
     padding: 10px;
 }
 
-.about {
-    border-bottom: 1px solid #000000;
+.nav-list li a {
+    color: white;
 }
 
 .title-section {
     display: flex;
+}
+
+// .nav-list {
+//     display: none;
+//   }
+
+// .nav-list a.icon {
+//     background: black;
+//     display: block;
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//   }
+
+.about {
+    padding: 50px 0;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+.recent-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.posts {
+    width: 100%;
+    border: 1px solid black;
+    padding: 75px 0;
+    text-align: center;
+    margin-top: 15px;
 }

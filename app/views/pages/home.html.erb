@@ -1,7 +1,7 @@
 <div class=home-page>
     <div class='nav-container'>
         <div class='nav-logo'>
-            <h1>Mutable Matter</h1>
+            <%= link_to image_tag('mutable_matter_logo.png', height: 50, width: 150), root_path %>
         </div>
         <div class='nav-options'>
             <ul class='nav-list'>
@@ -15,16 +15,20 @@
                 <% end %>
             </ul>
         </div>
+        <%# <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a> %>
     </div>
 
     <div class='about'>
-        <p>Mutable Matter is...</p><br><br><br><br><br>
+        <p>The best articles that we've read this week, compiled for you. These articles have sparked new ideas, bred challenging debates, and pushed our thinking in new ways. Other times these articles have provided interesting tidbits that fit into our broader frameworks here at Mutable Matter. At worst, these articles were simply enjoyable reads.</p>
     </div>
     <div class='recent-posts'>
-        <div class'title-section>
-            <h4>Title of post</h4>
+        <% @posts.take(3).each do |post| %>
+        <div class='posts'>
+            <h4> <h2> <%= link_to post.title, post_path(post) %></h2> </h4>
             <small>June 8th, 2019</small>
         </div>
-        <p>Title</p>
+        <% end %>
     </div>
 </div>
