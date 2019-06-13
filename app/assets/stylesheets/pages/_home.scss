@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #000000;
-    background-color: #000000;
+    // border-bottom: 1px solid #000000;
+    background-color: #ffffff;
+    padding: 15px 0;
 }
 
 .home-page {
@@ -20,7 +21,7 @@
 }
 
 .nav-list li a {
-    color: white;
+    color: #000000;
 }
 
 .title-section {
@@ -40,9 +41,22 @@
 //   }
 
 .about {
-    padding: 50px 0;
-    font-size: 20px;
-    border-bottom: 1px solid black;
+    display: flex;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.about p {
+    width: 80%;
+    // margin: 0 auto;
+    text-align: center;
+    // padding: 100px 0;
+    font-size: 32px;
+    font-weight: bold;  
+    color: #ffffff;
 }
 
 .recent-posts {
@@ -51,10 +65,56 @@
     flex-wrap: wrap;
 }
 
-.posts {
+.fill-div {
     width: 100%;
     border: 1px solid black;
     padding: 75px 0;
     text-align: center;
     margin-top: 15px;
+    font-size: 32px;
 }
+
+.mobile-nav {
+    display:none;
+}
+
+// a.fill-div {
+//     display: block;
+//     height: 100%;
+//     width: 100%;
+//     text-decoration: none;
+// }
+@media (max-width: 767px) {
+    // .nav-container {
+    //     display: block;
+    // }
+    .mobile-nav {
+        display: contents;
+    }
+
+    .nav-container {
+        display: none;
+    }
+    
+    .nav-container-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .nav-list-mobile li {
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+      }
+    
+      .nav-list-mobile li a {
+        color: #000000;
+      }
+
+      
+  }
+  
+  
