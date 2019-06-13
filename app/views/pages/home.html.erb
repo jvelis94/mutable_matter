@@ -1,7 +1,7 @@
 <div class=home-page>
     <div class='nav-container'>
         <div class='nav-logo'>
-            <%= link_to image_tag('mutable_matter_logo.png', height: 50, width: 150), root_path %>
+            <p style='margin: 0'><%= link_to image_tag('mutable_matter_logo.png', height: 50, width: 50), root_path %> Mutable Matter</p>
         </div>
         <div class='nav-options'>
             <ul class='nav-list'>
@@ -15,20 +15,37 @@
                 <% end %>
             </ul>
         </div>
-        <%# <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a> %>
     </div>
 
-    <div class='about'>
-        <p>The best articles that we've read this week, compiled for you. These articles have sparked new ideas, bred challenging debates, and pushed our thinking in new ways. Other times these articles have provided interesting tidbits that fit into our broader frameworks here at Mutable Matter. At worst, these articles were simply enjoyable reads.</p>
+    <div class='mobile-nav'>
+        <div class='nav-container-mobile'>
+            <div class='nav-logo'>
+                <p style='margin: 0'><%= link_to image_tag('mutable_matter_logo.png', height: 50, width: 50), root_path %> Mutable Matter</p>
+            </div>
+            <a href="javascript:void(0);" style='color: black; font-size: 24px' class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class='nav-options'>
+            <ul class='nav-list-mobile'>
+                <li><%= link_to 'All Posts', posts_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to 'New Post', new_post_path %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                <li><%= link_to 'Sign In', new_user_session_path %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+
+    <div class='about' style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800); height: 85vh;">
+        <p>The best articles that we've read this week, compiled for you</p>
     </div>
     <div class='recent-posts'>
         <% @posts.take(3).each do |post| %>
-        <div class='posts'>
-            <h4> <h2> <%= link_to post.title, post_path(post) %></h2> </h4>
-            <small>June 8th, 2019</small>
-        </div>
+            <%= link_to post.title, post_path(post), class: 'fill-div' %>   
         <% end %>
     </div>
 </div>
