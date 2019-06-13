@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid #000000;
     background-color: #ffffff;
     padding: 15px 0;
 }
@@ -48,6 +47,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+    border-top: 1px solid #000000;
 }
 
 .about p {
@@ -102,6 +102,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px 0;
+        border-bottom: 1px solid #000000;
     }
 
     .nav-list-mobile {
@@ -119,7 +120,6 @@
         color: #000000;
       }
 
-      
   }
   
   
