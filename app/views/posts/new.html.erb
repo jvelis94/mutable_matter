@@ -1,6 +1,19 @@
-<%= simple_form_for(@post) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :date %>
-    <%= f.text_area :body, label: 'Post Body'%>
-    <%= f.button :submit, label: 'Submit'%>
-<% end %>
+<style>
+    #post_title {
+        margin-left: 15px;
+    }
+
+    .date {
+        margin-right: 15px;
+    }
+
+</style>
+
+<div class='page-width'>
+    <%= simple_form_for(@post) do |f| %>
+        <p><%= f.input :title, label: 'Title:' %></p> 
+        <p><%= f.input :date, label: 'Date:' %></p>
+        <%= f.text_area :body, label: 'Post Body', style: 'height: 100vh'%>
+        <%= f.button :submit, label: 'Submit', class: 'btn btn-primary', style: 'margin-top: 10px'%>
+    <% end %>
+</div>

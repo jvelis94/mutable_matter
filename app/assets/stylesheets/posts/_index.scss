@@ -3,12 +3,19 @@
     margin: 0 auto;
 }
 
+.post-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 0px 25px;
+}
+
 .post-card {
     border: 1px solid black;
     margin-top: 25px;
     padding: 20px;
     background-color: black;
     color: #ffffff;
+    width: 100%;
 }
 .post-card a {
     text-decoration: none;
@@ -16,10 +23,10 @@
 }
 
 
-.card-details {
-    display: flex;
-    justify-content: space-between;
-}
+// .card-details {
+//     display: flex;
+//     justify-content: space-between;
+// }
 
 .card-details a {
     border: 1px solid #ffffff;
