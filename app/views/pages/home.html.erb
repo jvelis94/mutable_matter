@@ -1,11 +1,12 @@
 
 
 
-    <div class='about' style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800); height: 85vh;">
-        <p>The best articles that we've read this week, compiled for you</p>
-    </div>
+<div class='about' style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800); height: 85vh;">
+    <p>The best articles that we've read this week, compiled for you</p>
+</div>
     
 <div class='page-resize'>
+    <h3 style='font-size: 40px'>Recent posts</h3>
     <div class='recent-posts'>
         <% @posts.take(3).each do |post| %>
             <%= link_to post.title, post_path(post), class: 'fill-div' %>   

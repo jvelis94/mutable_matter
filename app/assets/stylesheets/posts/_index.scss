@@ -5,7 +5,7 @@
 
 .post-grid {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 0px 25px;
 }
 
@@ -39,3 +39,12 @@
     text-decoration: none;
     color: #ffffff;
 }
+
+@media (max-width: 767px) {
+    .post-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0px 25px;
+    }
+}
+
