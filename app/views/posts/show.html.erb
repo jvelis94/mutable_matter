@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@post.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @post.body %>
+<%# <% content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <div class='page-width'>
     <div class='show-content'>
         <h2> <%= link_to @post.title, post_path(@post) %></h2> 

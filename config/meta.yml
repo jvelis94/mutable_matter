@@ -1,0 +1,5 @@
+meta_product_name: "Mutable Matter"
+meta_title: "Mutable Matter - Our view of the world distilled to highlight trends that we are attracted to and why"
+meta_description: "The best articles that we've read this week, compiled for you"
+meta_image: "mutable_matter_logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
