@@ -69,4 +69,4 @@ gem 'pundit'
 gem 'devise'
 gem 'simple_form'
 gem 'tinymce-rails'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
