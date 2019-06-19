@@ -69,4 +69,6 @@ gem 'pundit'
 gem 'devise'
 gem 'simple_form'
 gem 'tinymce-rails'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'

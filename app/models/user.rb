@@ -6,5 +6,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, through: :posts
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  mount_uploader :avatar, PhotoUploader
+
 
 end
