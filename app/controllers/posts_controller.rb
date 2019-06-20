@@ -9,6 +9,8 @@ class PostsController < ApplicationController
     def show
       @comment = Comment.new
       @comment.post_id = @post.id
+      @reply = Reply.new
+      @reply.comment_id = @comment.post_id
     end
   
     def new

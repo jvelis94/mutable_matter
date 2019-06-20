@@ -23,6 +23,7 @@
                     <% @post.comments.reverse.each do |comment| %>
                         <p style='font-weight: bold'><%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></p>
                         <p><%= comment.description %></p>
+                        <small><%= link_to 'Reply',  new_comment_reply_path(comment.id) %></small>
                     <% end %>
                 </div>
             </div>

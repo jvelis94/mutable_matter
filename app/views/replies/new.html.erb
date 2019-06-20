@@ -1,0 +1,4 @@
+<%= simple_form_for(@reply, url: comment_replies_path ) do |f| %>
+    <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
+    <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
+<% end %>
