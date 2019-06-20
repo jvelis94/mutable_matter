@@ -32,7 +32,7 @@
                   autofocus: true,
                   input_html: { autocomplete: "email", class: 'form-control' }%>
                   <br>
-      <%= f.input :avatar %>
+      <%= f.input :avatar, label: 'Profile picture:' , label_html: { style: "margin-right: 10px; display: block" } %>
       <%= f.input :avatar_cache, as: :hidden %>     
                   <br>             
       <%= f.input :password,

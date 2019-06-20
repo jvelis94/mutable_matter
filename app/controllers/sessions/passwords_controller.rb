@@ -2,14 +2,17 @@
 
 class Sessions::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    # super
+  end
 
   # POST /resource/password
-  # def create
-  #   super
-  # end
+  def create
+    # super
+    user = User.find_by_email(params[:email])
+    user.send_password_reset if user
+    redirect_to root_url, notice: 'email sent with password instructions'
+  end
 
   # GET /resource/password/edit?reset_password_token=abcdef
   # def edit

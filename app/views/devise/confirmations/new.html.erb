@@ -1,20 +1,35 @@
-<h2>Resend confirmation instructions</h2>
+<style>
+  .simple_form .btn {
+     background-color: #0069D9;
+     padding: 8px 24px;
+     color: #ffffff;
+  }
 
-<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.full_error :confirmation_token %>
+  label #user_remember_me {
+    margin-right: 5px;
+  }
+</style>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                input_html: { autocomplete: "email" } %>
-  </div>
+<div class='page-width'>
+  <h2 style='text-align: center'>Resend confirmation instructions</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
-  </div>
-<% end %>
+  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.full_error :confirmation_token %>
 
-<%= render "devise/shared/links" %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                  input_html: { autocomplete: "email", class: 'form-control' } %>
+                  <br>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Resend confirmation instructions" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
