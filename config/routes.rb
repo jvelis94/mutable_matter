@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   devise_for :users, controllers: { registrations: "registrations", sessions: "users/sessions" }
   
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   
 end
