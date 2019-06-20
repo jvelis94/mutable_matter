@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
     before_action :authenticate_user!
 
+    def new 
+        @comment = Comment.new
+        @reply = Reply.new
+    end
+
     def create
         @comment = Comment.new(comment_params)
         @comment.post_id = params[:post_id]

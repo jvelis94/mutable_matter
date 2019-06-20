@@ -23,7 +23,13 @@
                     <% @post.comments.reverse.each do |comment| %>
                         <p style='font-weight: bold'><%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></p>
                         <p><%= comment.description %></p>
-                        <small><%= link_to 'Reply',  new_comment_reply_path(comment.id) %></small>
+                        <%= simple_form_for(@reply, url: comment_replies_path(comment.id), method: :post) do |f| %>
+                            <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
+                            <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
+                        <% end %>
+                        <% comment.replies.each do |reply| %>
+                        <p style='margin-left: 10px'><%= reply.description %></p>
+                        <% end %>
                     <% end %>
                 </div>
             </div>

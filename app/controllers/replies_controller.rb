@@ -1,13 +1,11 @@
 class RepliesController < ApplicationController
-    def new
-        @reply = Reply.new
-    end
 
     def create
         @reply = Reply.new(reply_params)
+        @reply.comment_id = params[:comment_id]
         @reply.author = "#{current_user.first_name} #{current_user.last_name}"
         @reply.save
-        redirect_to post_path(@comment.post)
+        redirect_to post_path(@comment.id)
     end
 
     private
