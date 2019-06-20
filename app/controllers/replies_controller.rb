@@ -1,11 +1,11 @@
 class RepliesController < ApplicationController
-
+    before_action :find_id, only: [:create]
     def create
         @reply = Reply.new(reply_params)
         @reply.comment_id = params[:comment_id]
         @reply.author = "#{current_user.first_name} #{current_user.last_name}"
         @reply.save
-        redirect_to post_path(@comment.id)
+        redirect_to post_path(@comment.post)
     end
 
     private
@@ -14,5 +14,8 @@ class RepliesController < ApplicationController
         params.require('reply').permit(:description, :author)
     end
     
+    def find_id
+        @comment = Comment.find(params[:comment_id])
+    end
     
 end
