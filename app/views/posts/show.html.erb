@@ -10,15 +10,21 @@
             <% if current_user == @post.user %>
             <%= link_to 'Edit Post', edit_post_path(@post) %>
             <% end %>
-            <h3>Comments (<%= @post.comments.size %>)</h3>
-            <%= simple_form_for([@post, @comment]) do |f| %>
-                <p><%= f.input :description, label: 'Comment' %></p> 
-                <%= f.button :submit, label: 'Submit', class: 'btn btn-primary', style: 'margin-top: 10px'%>
-            <% end %>
-            
-            <% @post.comments.reverse.each do |comment| %>
-                <h5><%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></h5>
-                <p><%= comment.description %></p>
-            <% end %>
+            <hr>
+            <div class='comment-section'>
+                <div id='comment-form'>
+                    <h6>Comments (<%= @post.comments.size %>)</h6>
+                    <%= simple_form_for([@post, @comment]) do |f| %>
+                        <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
+                        <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
+                    <% end %>
+                </div>
+                <div id='comment-body'>
+                    <% @post.comments.reverse.each do |comment| %>
+                        <p style='font-weight: bold'><%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></p>
+                        <p><%= comment.description %></p>
+                    <% end %>
+                </div>
+            </div>
     </div>
 <div>
