@@ -6,6 +6,11 @@
     padding: 15px 0;
 }
 
+.home-page-resize {
+    width: 90%;  
+    margin: 0 auto;
+}
+
 .page-resize {
     width: 90%;  
     margin: 0 auto;
@@ -48,7 +53,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-    border-top: 1px solid #000000;
+    // border-top: 1px solid #000000;
 }
 
 .about p {
