@@ -6,7 +6,7 @@
     <div class='show-content'>
         <h2> <%= link_to @post.title, post_path(@post) %></h2> 
             <small><%= @post.date %> </small>
-            <p> <%= sanitize @post.body %> </p>
+            <p id='body'> <%= sanitize @post.body %> </p>
             <% if current_user == @post.user %>
             <%= link_to 'Edit Post', edit_post_path(@post) %>
             <% end %>
@@ -16,19 +16,21 @@
                     <h6>Comments (<%= @post.comments.size %>)</h6>
                     <%= simple_form_for([@post, @comment]) do |f| %>
                         <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
-                        <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
+                        <%= f.button :submit, label: 'Comment', class: 'btn btn-primary' %>
                     <% end %>
                 </div>
                 <div id='comment-body'>
                     <% @post.comments.reverse.each do |comment| %>
-                        <p style='font-weight: bold'><%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></p>
+                         
+                        <p style='font-weight: bold'><%= cl_image_tag comment.avatar, height: 40, width: 40, style: 'border-radius: 50%', crop: :fill %> <%= comment.author %><small> posted <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</small></p>
                         <p><%= comment.description %></p>
+                        
                         <%= simple_form_for(@reply, url: comment_replies_path(comment.id), method: :post) do |f| %>
-                            <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
-                            <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
+                            <%= f.input :description, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Reply', label: false %>
+                            <%= f.button :submit, label: 'Reply', class: 'btn btn-primary' %>
                         <% end %>
                         <% comment.replies.each do |reply| %>
-                        <p style='margin-left: 10px'><%= reply.description %></p>
+                        <p style='margin-left: 10px'><%= cl_image_tag reply.avatar, height: 40, width: 40, style: 'border-radius: 50%', crop: :fill %>  <%= reply.description %></p>
                         <% end %>
                     <% end %>
                 </div>
