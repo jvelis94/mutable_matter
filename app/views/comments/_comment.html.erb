@@ -1,0 +1,13 @@
+
+  <p><%= cl_image_tag comment.avatar, height: 40, width: 40, style: 'border-radius: 50%', crop: :fill %> <%= comment.author %></p>
+  <%= comment.description %> - <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+
+  <%= simple_form_for([comment, Comment.new]) do |f| %>
+      <%= f.input :description, placeholder: "Add a Reply", label: false %><br/>
+      <%= f.submit "Reply"  %>
+      <% end %>
+
+
+      <%= render partial: 'comments/comment', collection: comment.comments %>
+
+
