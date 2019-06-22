@@ -13,48 +13,17 @@
 
 
 
-# puts "Creating users"
+# puts "Creating user"
 
 # user1 = User.create!(
-#   email: Faker::Internet.email, 
-#   password: "password", 
-#   first_name: Faker::Name.male_first_name , 
-#   last_name: Faker::Name.last_name, 
-#   role: "Farmer",
-#   remote_avatar_url:'https://images.unsplash.com/photo-1528695037290-720b9ad2f242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-#     )
+#   email: 'velisjoel@gmail.com', 
+#   password: "123456", 
+#   first_name: 'Joel', 
+#   last_name: 'Velis', 
+#   remote_avatar_url: 'https://images.unsplash.com/photo-1528695037290-720b9ad2f242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+#     )    
 
-# farmer2 = User.create!(
-#   email: Faker::Internet.email, 
-#   password: "password", 
-#   first_name: Faker::Name.male_first_name , 
-#   last_name: Faker::Name.last_name, 
-#   role: "Farmer",
-#   remote_avatar_url:'https://images.unsplash.com/photo-1529600490622-6fe4b898c84e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-#    )
-
-# farmer3 = User.create!(
-# email: Faker::Internet.email, 
-# password: "password", 
-# first_name: Faker::Name.male_first_name , 
-# last_name: Faker::Name.last_name, 
-# role: "Farmer",
-# remote_avatar_url:'https://images.unsplash.com/photo-1509506489701-dfe23b067808?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-# )
-  
-# farmer4 = User.create!(
-#   email: Faker::Internet.email, 
-#   password: "password", 
-#   first_name: Faker::Name.male_first_name , 
-#   last_name: Faker::Name.last_name, 
-#   role: "Farmer",
-#   remote_avatar_url:'https://images.unsplash.com/photo-1558284811-bebfac1d15e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-#   )
-
-      
-
-
-#         puts "Creating users"
+#     puts "Creating posts"
 
 #         resto1 = User.create!(
 #           email: Faker::Internet.email,
