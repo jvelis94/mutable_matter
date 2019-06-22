@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     def create
         @comment = @commentable.comments.new comment_params
         @comment.author = "#{current_user.first_name} #{current_user.last_name}"
-        @comment.avatar = current_user.avatar
+        # @comment.avatar = current_user.avatar
         if @comment.save
             redirect_to posts_path, notice: 'Your comment was successfully posted!'
         else
