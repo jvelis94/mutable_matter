@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
     before_action :authenticate_user!, :find_commentable
-    before_action :find_post_id
    
     def new
         @comment = Comment.new
@@ -11,9 +10,9 @@ class CommentsController < ApplicationController
         @comment.author = "#{current_user.first_name} #{current_user.last_name}"
         @comment.avatar = current_user.avatar
         if @comment.save
-            redirect_to post_path(@post), notice: 'Your comment was successfully posted!'
+            redirect_to request.referrer, notice: 'Your comment was successfully posted!'
         else
-            redirect_to post_path(@post), notice: "Your comment wasn't posted!"
+            redirect_to request.referrer, notice: "Your comment wasn't posted!"
         end
     end
     
@@ -28,8 +27,5 @@ class CommentsController < ApplicationController
         @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
         @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
       end
-    
-      def find_post_id
-        @post = Post.find(params[:post_id])
-    end
+
 end
