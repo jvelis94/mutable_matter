@@ -42,8 +42,8 @@
                   <% if current_user.email == 'velisjoel@gmail.com' %>
                   <li><%= link_to 'New Post', new_post_path %></li>
                   <% end %>
-                  <%# <%= cl_image_tag current_user.avatar, height: 40, width: 40, style: 'border-radius: 50%', crop: :fill %>
                   <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+                  <%= cl_image_tag current_user.avatar, height: 30, width: 30, style: 'border-radius: 50%', crop: :fill %>
                   <% else %>
                   <li><%= link_to 'Sign Up', new_user_registration_path %></li>
                   <li><%= link_to 'Sign In', new_user_session_path %></li>
